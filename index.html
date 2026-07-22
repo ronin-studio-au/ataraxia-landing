@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ataraxia — The Art of Inner Peace, Practiced Daily</title>
+  <meta name="description" content="Ataraxia is a stoic practice, journaling, and fitness app built on timeless wisdom and designed for modern life.">
+  <meta name="keywords" content="stoic, stoicism, journal, meditation, fitness, workout, Marcus Aurelius, self-improvement, mindfulness">
+  <meta property="og:title" content="Ataraxia — The Art of Inner Peace, Practiced Daily">
+  <meta property="og:description" content="A stoic practice, journaling, and fitness app built on timeless wisdom and designed for modern life.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ataraxia — The Art of Inner Peace, Practiced Daily">
+  <meta name="twitter:description" content="A stoic practice, journaling, and fitness app built on timeless wisdom and designed for modern life.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23fbf1c7'/><circle cx='16' cy='16' r='11' fill='none' stroke='%233c3836' stroke-width='1.5'/><circle cx='16' cy='16' r='6' fill='none' stroke='%233c3836' stroke-width='1.5'/><circle cx='16' cy='16' r='2' fill='%233c3836'/></svg>">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #fbf1c7;
+      --bg1:      #ebdbb2;
+      --bg2:      #d5c4a1;
+      --fg:       #3c3836;
+      --fg2:      #504945;
+      --accent:   #928374;
+      --red:      #cc241d;
+      --green:    #98971a;
+      --yellow:   #d79921;
+      --blue:     #458588;
+      --purple:   #b16286;
+      --aqua:     #689d6a;
+      --orange:   #d65d0e;
+      --serif:    'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+      --sans:     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── FADE-IN ANIMATION ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── TYPOGRAPHY ─── */
+    h1, h2, h3, h4 { font-family: var(--serif); color: var(--fg); }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 40px;
+      background: rgba(251, 241, 199, 0.88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--bg1);
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      letter-spacing: 0.06em;
+      color: var(--fg);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      color: var(--fg2);
+      text-decoration: none;
+      font-size: 0.875rem;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--fg); }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-family: var(--sans);
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: var(--fg);
+      color: var(--bg);
+      border-color: var(--fg);
+    }
+    .btn-primary:hover { background: var(--fg2); border-color: var(--fg2); }
+    .btn-outline {
+      background: transparent;
+      color: var(--fg);
+      border-color: var(--fg2);
+    }
+    .btn-outline:hover { border-color: var(--fg); }
+    .btn-sm { padding: 9px 18px; font-size: 0.8rem; }
+
+    /* ─── SECTION SHARED ─── */
+    section { padding: 96px 40px; }
+    .container { max-width: 1080px; margin: 0 auto; }
+    .section-label {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .section-sub {
+      color: var(--fg2);
+      font-size: 1.05rem;
+      max-width: 540px;
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 96px;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(213, 196, 161, 0.45) 0%, transparent 70%),
+        var(--bg);
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--bg2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-tagline {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: var(--fg2);
+      font-style: italic;
+      margin-bottom: 36px;
+      line-height: 1.5;
+    }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    /* ─── PHONE MOCKUP ─── */
+    .phone-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .phone {
+      width: 220px;
+      height: 440px;
+      background: var(--fg);
+      border-radius: 36px;
+      padding: 12px;
+      box-shadow:
+        0 40px 80px rgba(60, 56, 54, 0.22),
+        0 8px 20px rgba(60, 56, 54, 0.14),
+        inset 0 0 0 1px rgba(255,255,255,0.07);
+      position: relative;
+    }
+    .phone::before {
+      content: '';
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 6px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 3px;
+      z-index: 2;
+    }
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: var(--bg);
+      border-radius: 26px;
+      overflow: hidden;
+      padding: 28px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .phone-time {
+      font-size: 0.65rem;
+      color: var(--accent);
+      text-align: center;
+      letter-spacing: 0.08em;
+    }
+    .phone-quote-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .phone-quote {
+      font-family: var(--serif);
+      font-size: 0.72rem;
+      font-style: italic;
+      color: var(--fg);
+      line-height: 1.5;
+    }
+    .phone-attr {
+      font-size: 0.55rem;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+    }
+    .phone-divider {
+      height: 1px;
+      background: var(--bg1);
+    }
+    .phone-journal-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--aqua);
+    }
+    .phone-journal-text {
+      font-size: 0.62rem;
+      color: var(--fg2);
+      line-height: 1.5;
+    }
+    .phone-workout-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .phone-workout-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+    }
+    .phone-stat {
+      display: flex;
+      gap: 8px;
+    }
+    .phone-stat-item {
+      text-align: center;
+    }
+    .phone-stat-num {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--fg);
+    }
+    .phone-stat-unit {
+      font-size: 0.5rem;
+      color: var(--accent);
+      display: block;
+    }
+    .phone-bar-row { display: flex; gap: 4px; align-items: flex-end; height: 28px; }
+    .phone-bar {
+      width: 12px;
+      background: var(--bg1);
+      border-radius: 2px;
+      position: relative;
+    }
+    .phone-bar-fill {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      border-radius: 2px;
+      background: var(--orange);
+    }
+
+    /* ─── PHILOSOPHY ─── */
+    #philosophy {
+      background: var(--bg1);
+      border-top: 1px solid var(--bg2);
+      border-bottom: 1px solid var(--bg2);
+    }
+    .philosophy-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .blockquote {
+      border-left: 3px solid var(--yellow);
+      padding: 20px 0 20px 28px;
+      margin: 28px 0;
+    }
+    .blockquote p {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-style: italic;
+      color: var(--fg);
+      line-height: 1.6;
+    }
+    .blockquote cite {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-style: normal;
+    }
+    .philosophy-pillars { display: flex; flex-direction: column; gap: 20px; }
+    .pillar {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 16px;
+      background: var(--bg);
+      border: 1px solid var(--bg2);
+      border-radius: 8px;
+    }
+    .pillar-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+    }
+    .pillar-text h4 {
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    .pillar-text p {
+      font-size: 0.85rem;
+      color: var(--fg2);
+    }
+
+    /* ─── FEATURES ─── */
+    #features { background: var(--bg); }
+    .features-header { text-align: center; margin-bottom: 56px; }
+    .features-header .section-sub { margin: 0 auto; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .feature-card {
+      background: var(--bg1);
+      border: 1px solid var(--bg2);
+      border-radius: 12px;
+      padding: 32px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .feature-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 18px;
+    }
+    .feature-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      font-size: 0.9rem;
+      color: var(--fg2);
+      line-height: 1.6;
+    }
+
+    /* ─── APP PREVIEW ─── */
+    #preview {
+      background: var(--fg);
+      color: var(--bg);
+      border-top: none;
+    }
+    #preview .section-label { color: var(--accent); }
+    #preview .section-title { color: var(--bg); }
+    #preview .section-sub { color: var(--bg1); }
+    .preview-header { text-align: center; margin-bottom: 56px; }
+    .phones-row {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      align-items: flex-end;
+    }
+    .phone-preview {
+      width: 200px;
+      height: 400px;
+      background: #2a2520;
+      border-radius: 32px;
+      padding: 10px;
+      box-shadow:
+        0 30px 60px rgba(0,0,0,0.4),
+        inset 0 0 0 1px rgba(255,255,255,0.06);
+      flex-shrink: 0;
+    }
+    .phone-preview.center { transform: translateY(-24px); }
+    .phone-preview-screen {
+      width: 100%;
+      height: 100%;
+      background: var(--bg);
+      border-radius: 24px;
+      overflow: hidden;
+      padding: 18px 14px 14px;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Screen 1: Quote */
+    .preview-screen-1 {
+      background: var(--bg);
+      justify-content: center;
+      gap: 14px;
+      text-align: center;
+    }
+    .ps1-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .ps1-ornament {
+      display: flex;
+      justify-content: center;
+      margin: 4px 0;
+    }
+    .ps1-quote {
+      font-family: var(--serif);
+      font-size: 0.75rem;
+      font-style: italic;
+      color: var(--fg);
+      line-height: 1.6;
+    }
+    .ps1-author {
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .ps1-progress-row {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .ps1-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--bg2);
+    }
+    .ps1-dot.active { background: var(--yellow); }
+    .ps1-btn {
+      margin-top: 8px;
+      padding: 7px 0;
+      background: var(--fg);
+      color: var(--bg);
+      border-radius: 6px;
+      text-align: center;
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Screen 2: Journal */
+    .preview-screen-2 { background: var(--bg); gap: 10px; }
+    .ps2-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .ps2-date { font-size: 0.55rem; color: var(--accent); letter-spacing: 0.08em; }
+    .ps2-tag {
+      font-size: 0.5rem;
+      padding: 2px 7px;
+      background: var(--bg1);
+      border-radius: 10px;
+      color: var(--fg2);
+    }
+    .ps2-prompt {
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--purple);
+    }
+    .ps2-prompt-text {
+      font-family: var(--serif);
+      font-size: 0.68rem;
+      color: var(--fg2);
+      font-style: italic;
+    }
+    .ps2-divider { height: 1px; background: var(--bg1); }
+    .ps2-entry {
+      font-size: 0.62rem;
+      color: var(--fg);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .ps2-cursor {
+      display: inline-block;
+      width: 1px;
+      height: 10px;
+      background: var(--fg);
+      vertical-align: text-bottom;
+      animation: blink 1.1s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+    .ps2-mood-row {
+      display: flex;
+      gap: 6px;
+      margin-top: auto;
+    }
+    .ps2-mood {
+      flex: 1;
+      text-align: center;
+      padding: 5px 0;
+      background: var(--bg1);
+      border-radius: 6px;
+      font-size: 0.55rem;
+      color: var(--fg2);
+    }
+    .ps2-mood.active { background: var(--purple); color: var(--bg); }
+
+    /* Screen 3: Workout */
+    .preview-screen-3 { background: var(--bg); gap: 9px; }
+    .ps3-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .ps3-title { font-size: 0.7rem; font-weight: 600; color: var(--fg); font-family: var(--serif); }
+    .ps3-badge {
+      font-size: 0.5rem;
+      padding: 2px 7px;
+      background: var(--orange);
+      color: var(--bg);
+      border-radius: 10px;
+      letter-spacing: 0.06em;
+    }
+    .ps3-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+    }
+    .ps3-stat {
+      background: var(--bg1);
+      border-radius: 6px;
+      padding: 6px 4px;
+      text-align: center;
+    }
+    .ps3-stat-num {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--fg);
+      display: block;
+    }
+    .ps3-stat-label {
+      font-size: 0.48rem;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+    }
+    .ps3-divider { height: 1px; background: var(--bg1); }
+    .ps3-exercise {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 0;
+      border-bottom: 1px solid var(--bg1);
+    }
+    .ps3-exercise:last-of-type { border-bottom: none; }
+    .ps3-ex-name { font-size: 0.6rem; color: var(--fg); }
+    .ps3-ex-sets {
+      font-size: 0.55rem;
+      color: var(--accent);
+    }
+    .ps3-ex-check {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ps3-ex-check svg { width: 7px; height: 7px; }
+
+    /* ─── TESTIMONIALS ─── */
+    #testimonials {
+      background: var(--bg1);
+      border-top: 1px solid var(--bg2);
+      border-bottom: 1px solid var(--bg2);
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .testimonial-card {
+      background: var(--bg);
+      border: 1px solid var(--bg2);
+      border-radius: 10px;
+      padding: 28px 24px;
+    }
+    .testimonial-mark {
+      font-family: var(--serif);
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--yellow);
+      margin-bottom: 8px;
+    }
+    .testimonial-card p {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--fg);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .author-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--bg2);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .author-info strong {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--fg);
+    }
+    .author-info span {
+      font-size: 0.72rem;
+      color: var(--accent);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--fg);
+      color: var(--bg1);
+      padding: 56px 40px;
+    }
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid rgba(235, 219, 178, 0.15);
+      flex-wrap: wrap;
+    }
+    .footer-brand { max-width: 280px; }
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      color: var(--bg);
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+    .footer-brand p {
+      font-size: 0.85rem;
+      color: var(--accent);
+      line-height: 1.6;
+    }
+    .footer-cta { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+    .btn-footer {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-family: var(--sans);
+      text-decoration: none;
+      border: 1px solid rgba(235, 219, 178, 0.3);
+      color: var(--bg);
+      background: rgba(235, 219, 178, 0.06);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn-footer:hover { background: rgba(235, 219, 178, 0.12); border-color: rgba(235, 219, 178, 0.5); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 28px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--bg); }
+    .footer-tagline {
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      section { padding: 72px 20px; }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 48px;
+      }
+      .hero-cta { justify-content: center; }
+      .phone-wrap { order: -1; }
+
+      .philosophy-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .features-grid { grid-template-columns: 1fr; }
+
+      .phones-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      .phone-preview.center { transform: none; }
+      .phone-preview { width: 180px; height: 360px; }
+
+      .testimonials-grid { grid-template-columns: 1fr; }
+
+      footer { padding: 40px 20px; }
+      .footer-top { flex-direction: column; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title { font-size: 2.8rem; }
+      .hero-cta { flex-direction: column; align-items: center; }
+      .btn { width: 100%; justify-content: center; max-width: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#">Ataraxia<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#philosophy">Philosophy</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#preview">Preview</a></li>
+      <li><a href="#testimonials">Wisdom</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div>
+          <span class="hero-eyebrow">Stoic Practice &amp; Wellness</span>
+          <h1 class="hero-title reveal">Atar<em>axia</em></h1>
+          <p class="hero-tagline reveal">The art of inner peace, practiced daily.</p>
+          <div class="hero-cta reveal">
+            <a href="#" class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              App Store
+            </a>
+            <a href="#" class="btn btn-outline">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.35.19.74.24 1.12.14l11.73-6.76-2.48-2.49-10.37 9.11zm-1.69-20.7c-.06.2-.08.43-.08.67V20.3c0 .24.03.47.1.68l.06.06L13.35 9.3l-.02-.03L1.49 3.06zm19.44 8.65l-3.04-1.75-2.75 2.76 2.75 2.75 3.06-1.76c.87-.5.87-1.5-.02-2zM4.3.14L16.03 6.9l-2.48 2.49L1.43.27C1.8.17 2.2.22 4.3.14z"/></svg>
+              Google Play
+            </a>
+          </div>
+        </div>
+
+        <!-- Phone Mockup -->
+        <div class="phone-wrap reveal">
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="phone-time">07:23</div>
+              <div class="phone-quote-label">Morning Reflection</div>
+              <div class="phone-quote">"You have power over your mind, not outside events. Realize this, and you will find strength."</div>
+              <div class="phone-attr">— Marcus Aurelius</div>
+              <div class="phone-divider"></div>
+              <div class="phone-journal-label">Yesterday's Entry</div>
+              <div class="phone-journal-text">Practiced detachment from the outcome. Focused on what I could control — my effort, my response, my virtue...</div>
+              <div class="phone-divider"></div>
+              <div class="phone-workout-row">
+                <div class="phone-workout-label">Today's Workout</div>
+              </div>
+              <div class="phone-stat">
+                <div class="phone-stat-item">
+                  <div class="phone-stat-num">4</div>
+                  <span class="phone-stat-unit">sets</span>
+                </div>
+                <div class="phone-stat-item">
+                  <div class="phone-stat-num">380</div>
+                  <span class="phone-stat-unit">lbs total</span>
+                </div>
+                <div class="phone-stat-item">
+                  <div class="phone-stat-num">32m</div>
+                  <span class="phone-stat-unit">duration</span>
+                </div>
+              </div>
+              <div class="phone-bar-row">
+                <div class="phone-bar" style="height:100%"><div class="phone-bar-fill" style="height:60%"></div></div>
+                <div class="phone-bar" style="height:100%"><div class="phone-bar-fill" style="height:80%"></div></div>
+                <div class="phone-bar" style="height:100%"><div class="phone-bar-fill" style="height:45%"></div></div>
+                <div class="phone-bar" style="height:100%"><div class="phone-bar-fill" style="height:90%"></div></div>
+                <div class="phone-bar" style="height:100%"><div class="phone-bar-fill" style="height:70%"></div></div>
+                <div class="phone-bar" style="height:100%"><div class="phone-bar-fill" style="height:55%"></div></div>
+                <div class="phone-bar" style="height:100%"><div class="phone-bar-fill" style="height:85%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section id="philosophy">
+    <div class="container">
+      <div class="philosophy-inner">
+        <div class="reveal">
+          <p class="section-label">Our Foundation</p>
+          <h2 class="section-title">Built on timeless wisdom. Designed for modern life.</h2>
+          <blockquote class="blockquote">
+            <p>"Waste no more time arguing about what a good man should be. Be one."</p>
+            <cite>— Marcus Aurelius, Meditations</cite>
+          </blockquote>
+          <p class="section-sub">Ataraxia draws from the Stoic tradition — the pursuit of tranquility through reason, virtue, and the discipline of attention. Every feature is designed to bring you closer to what the ancients called the good life: lived with intention, free from unnecessary suffering.</p>
+        </div>
+        <div class="philosophy-pillars reveal">
+          <div class="pillar">
+            <svg class="pillar-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="18" stroke="#928374" stroke-width="1.5"/>
+              <circle cx="24" cy="24" r="10" stroke="#928374" stroke-width="1.5"/>
+              <circle cx="24" cy="24" r="3" fill="#928374"/>
+              <line x1="24" y1="6" x2="24" y2="14" stroke="#928374" stroke-width="1.5"/>
+              <line x1="24" y1="34" x2="24" y2="42" stroke="#928374" stroke-width="1.5"/>
+              <line x1="6" y1="24" x2="14" y2="24" stroke="#928374" stroke-width="1.5"/>
+              <line x1="34" y1="24" x2="42" y2="24" stroke="#928374" stroke-width="1.5"/>
+            </svg>
+            <div class="pillar-text">
+              <h4>Dichotomy of Control</h4>
+              <p>Focus only on what is within your power. Release attachment to external outcomes.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <svg class="pillar-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 8 L24 40" stroke="#d79921" stroke-width="1.5"/>
+              <path d="M8 24 L40 24" stroke="#d79921" stroke-width="1.5"/>
+              <path d="M13 13 L35 35" stroke="#d79921" stroke-width="1.5"/>
+              <path d="M35 13 L13 35" stroke="#d79921" stroke-width="1.5"/>
+              <circle cx="24" cy="24" r="5" fill="none" stroke="#d79921" stroke-width="1.5"/>
+            </svg>
+            <div class="pillar-text">
+              <h4>Daily Discipline</h4>
+              <p>Virtue is not a destination but a daily practice — chosen moment by moment.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <svg class="pillar-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="14" width="28" height="22" rx="3" stroke="#689d6a" stroke-width="1.5"/>
+              <line x1="10" y1="20" x2="38" y2="20" stroke="#689d6a" stroke-width="1.5"/>
+              <line x1="18" y1="10" x2="18" y2="18" stroke="#689d6a" stroke-width="1.5"/>
+              <line x1="30" y1="10" x2="30" y2="18" stroke="#689d6a" stroke-width="1.5"/>
+              <line x1="16" y1="26" x2="32" y2="26" stroke="#689d6a" stroke-width="1" stroke-dasharray="2 2"/>
+              <line x1="16" y1="30" x2="26" y2="30" stroke="#689d6a" stroke-width="1" stroke-dasharray="2 2"/>
+            </svg>
+            <div class="pillar-text">
+              <h4>Memento Mori</h4>
+              <p>Remember that time is finite. Each day is a gift — use it with full awareness.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="container">
+      <div class="features-header reveal">
+        <p class="section-label">What's Inside</p>
+        <h2 class="section-title">Every tool you need for the examined life.</h2>
+        <p class="section-sub">Four core practices, woven into a single daily ritual.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <svg class="feature-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="16" stroke="#d79921" stroke-width="1.5"/>
+            <path d="M24 14 L24 24 L31 24" stroke="#d79921" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="24" cy="24" r="2" fill="#d79921"/>
+          </svg>
+          <h3>Daily Stoic Practice</h3>
+          <p>Begin each morning with a curated Stoic reflection and close each evening with a disciplined review. Twelve classical exercises — from negative visualization to voluntary discomfort — guide your practice.</p>
+        </div>
+        <div class="feature-card reveal">
+          <svg class="feature-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="8" width="28" height="34" rx="3" stroke="#b16286" stroke-width="1.5"/>
+            <line x1="16" y1="16" x2="32" y2="16" stroke="#b16286" stroke-width="1.5"/>
+            <line x1="16" y1="22" x2="32" y2="22" stroke="#b16286" stroke-width="1.5"/>
+            <line x1="16" y1="28" x2="26" y2="28" stroke="#b16286" stroke-width="1.5"/>
+            <circle cx="30" cy="34" r="6" fill="#fbf1c7" stroke="#b16286" stroke-width="1.5"/>
+            <path d="M28 34 L29.5 35.5 L32 32.5" stroke="#b16286" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>Mindful Journaling</h3>
+          <p>Guided prompts drawn from Stoic philosophy help you examine your judgments, practice gratitude, and articulate your values. Track emotional patterns over time and watch clarity emerge.</p>
+        </div>
+        <div class="feature-card reveal">
+          <svg class="feature-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="28" width="8" height="14" rx="1.5" fill="none" stroke="#d65d0e" stroke-width="1.5"/>
+            <rect x="20" y="20" width="8" height="22" rx="1.5" fill="none" stroke="#d65d0e" stroke-width="1.5"/>
+            <rect x="32" y="12" width="8" height="30" rx="1.5" fill="none" stroke="#d65d0e" stroke-width="1.5"/>
+            <path d="M8 22 L20 16 L32 10" stroke="#d65d0e" stroke-width="1.2" stroke-dasharray="2 2"/>
+          </svg>
+          <h3>Workout Tracker</h3>
+          <p>Log strength training, cardio, and flexibility with a clean, frictionless interface. The Stoics knew the body and mind are inseparable — a strong body supports a tranquil mind.</p>
+        </div>
+        <div class="feature-card reveal">
+          <svg class="feature-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="16" stroke="#458588" stroke-width="1.5"/>
+            <path d="M16 28 Q18 22 20 24 Q22 26 24 20 Q26 14 28 22 Q30 28 32 24" stroke="#458588" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          </svg>
+          <h3>Progress &amp; Insights</h3>
+          <p>Visualize your growth across mind and body. Weekly summaries, streak tracking, and pattern recognition help you understand where you're flourishing and where to direct more attention.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP PREVIEW -->
+  <section id="preview">
+    <div class="container">
+      <div class="preview-header reveal">
+        <p class="section-label">App Preview</p>
+        <h2 class="section-title">Designed for stillness.</h2>
+        <p class="section-sub">Every screen crafted to remove distraction and invite reflection.</p>
+      </div>
+      <div class="phones-row">
+
+        <!-- Screen 1: Quote -->
+        <div class="phone-preview reveal">
+          <div class="phone-preview-screen preview-screen-1">
+            <p class="ps1-label">Daily Reflection</p>
+            <div class="ps1-ornament">
+              <svg width="40" height="8" viewBox="0 0 40 8"><line x1="0" y1="4" x2="15" y2="4" stroke="#d5c4a1" stroke-width="1"/><circle cx="20" cy="4" r="2" fill="#928374"/><line x1="25" y1="4" x2="40" y2="4" stroke="#d5c4a1" stroke-width="1"/></svg>
+            </div>
+            <p class="ps1-quote">"Confine yourself to the present."</p>
+            <p class="ps1-author">— Marcus Aurelius</p>
+            <div style="flex:1"></div>
+            <div class="ps1-progress-row">
+              <div class="ps1-dot active"></div>
+              <div class="ps1-dot"></div>
+              <div class="ps1-dot"></div>
+              <div class="ps1-dot"></div>
+              <div class="ps1-dot"></div>
+            </div>
+            <div class="ps1-btn">Reflect on this</div>
+          </div>
+        </div>
+
+        <!-- Screen 2: Journal (center, elevated) -->
+        <div class="phone-preview center reveal">
+          <div class="phone-preview-screen preview-screen-2">
+            <div class="ps2-header">
+              <span class="ps2-date">Tuesday, July 22</span>
+              <span class="ps2-tag">Evening Review</span>
+            </div>
+            <div class="ps2-prompt">Today's Prompt</div>
+            <div class="ps2-prompt-text">"What virtue did you practice today?"</div>
+            <div class="ps2-divider"></div>
+            <div class="ps2-entry">
+              I chose patience over reaction when a difficult conversation arose. I reminded myself that I cannot control another's words, only my response. The discomfort passed, and I felt the quiet of having acted rightly.<span class="ps2-cursor"></span>
+            </div>
+            <div class="ps2-mood-row">
+              <div class="ps2-mood">Calm</div>
+              <div class="ps2-mood active">Focused</div>
+              <div class="ps2-mood">Grateful</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Screen 3: Workout -->
+        <div class="phone-preview reveal">
+          <div class="phone-preview-screen preview-screen-3">
+            <div class="ps3-header">
+              <span class="ps3-title">Today's Training</span>
+              <span class="ps3-badge">Active</span>
+            </div>
+            <div class="ps3-stats-row">
+              <div class="ps3-stat">
+                <span class="ps3-stat-num">3</span>
+                <span class="ps3-stat-label">Exercises</span>
+              </div>
+              <div class="ps3-stat">
+                <span class="ps3-stat-num">42m</span>
+                <span class="ps3-stat-label">Duration</span>
+              </div>
+              <div class="ps3-stat">
+                <span class="ps3-stat-num">9</span>
+                <span class="ps3-stat-label">Sets Done</span>
+              </div>
+            </div>
+            <div class="ps3-divider"></div>
+            <div class="ps3-exercise">
+              <span class="ps3-ex-name">Deadlift</span>
+              <span class="ps3-ex-sets">4 × 5 @ 185lb</span>
+              <div class="ps3-ex-check">
+                <svg viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3.5 6L6.5 2" stroke="#fbf1c7" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+            <div class="ps3-exercise">
+              <span class="ps3-ex-name">Pull-ups</span>
+              <span class="ps3-ex-sets">3 × 8 BW</span>
+              <div class="ps3-ex-check">
+                <svg viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3.5 6L6.5 2" stroke="#fbf1c7" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+            <div class="ps3-exercise">
+              <span class="ps3-ex-name">Farmer's Carry</span>
+              <span class="ps3-ex-sets">2 × 40m</span>
+              <div class="ps3-ex-check" style="background: var(--bg1);">
+                <svg viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3.5 6L6.5 2" stroke="#928374" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS / WISDOM -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="reveal" style="text-align:center; margin-bottom: 0;">
+        <p class="section-label">Ancient Wisdom</p>
+        <h2 class="section-title" style="max-width: 560px; margin: 0 auto 12px;">Words that have guided humanity for two millennia.</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-mark">&ldquo;</div>
+          <p>The happiness of your life depends upon the quality of your thoughts. Guard accordingly, and take care that you entertain no notions unsuitable to virtue and reasonable nature.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="8" r="4" stroke="#928374" stroke-width="1.5"/>
+                <path d="M4 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#928374" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="author-info">
+              <strong>Marcus Aurelius</strong>
+              <span>Roman Emperor, 161–180 AD</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-mark">&ldquo;</div>
+          <p>It is not the man who has too little, but the man who craves more, that is poor. Accustom yourself to a diet that is not luxurious, and then contentment will be within reach.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="8" r="4" stroke="#928374" stroke-width="1.5"/>
+                <path d="M4 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#928374" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="author-info">
+              <strong>Seneca</strong>
+              <span>Philosopher &amp; Statesman, c. 4 BC – 65 AD</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-mark">&ldquo;</div>
+          <p>Make the best use of what is in your power, and take the rest as it happens. First say to yourself what you would be, and then do what you have to do.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="8" r="4" stroke="#928374" stroke-width="1.5"/>
+                <path d="M4 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#928374" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="author-info">
+              <strong>Epictetus</strong>
+              <span>Philosopher, c. 50 – 135 AD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">Ataraxia</div>
+          <p>A daily practice for the examined life. Stoic philosophy, mindful journaling, and disciplined fitness — unified.</p>
+        </div>
+        <div class="footer-cta">
+          <a href="#" class="btn-footer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Download on the App Store
+          </a>
+          <a href="#" class="btn-footer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.35.19.74.24 1.12.14l11.73-6.76-2.48-2.49-10.37 9.11zm-1.69-20.7c-.06.2-.08.43-.08.67V20.3c0 .24.03.47.1.68l.06.06L13.35 9.3l-.02-.03L1.49 3.06zm19.44 8.65l-3.04-1.75-2.75 2.76 2.75 2.75 3.06-1.76c.87-.5.87-1.5-.02-2zM4.3.14L16.03 6.9l-2.48 2.49L1.43.27C1.8.17 2.2.22 4.3.14z"/></svg>
+            Get it on Google Play
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <nav class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Contact</a>
+        </nav>
+        <p class="footer-tagline">Made with discipline and virtue.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer for fade-in reveals
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
