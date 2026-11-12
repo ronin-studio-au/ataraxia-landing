@@ -1,0 +1,248 @@
+.pricing { padding: 136px 40px 112px; }
+.pricing-inner { max-width: 1080px; margin: 0 auto; }
+
+/* ─── HEADER ─── */
+.pricing-header { text-align: center; max-width: 640px; margin: 0 auto 64px; }
+.pricing-eyebrow, .pricing-section-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.pricing-header h1 { font-size: clamp(2.6rem, 6vw, 4rem); line-height: 1.04; letter-spacing: -0.02em; margin: 14px 0 20px; }
+.pricing-header p { font-size: 1.1rem; color: var(--muted); line-height: 1.65; }
+
+/* ─── PLANS ─── */
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+.plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 32px;
+}
+.plan-badge {
+  position: absolute;
+  top: -12px; left: 32px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--pro);
+  color: var(--pro-fg);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+.plan h2 { font-size: 1.6rem; letter-spacing: -0.01em; }
+.plan-tagline { color: var(--muted); font-size: 0.92rem; margin-top: 4px; }
+.plan-price { display: flex; align-items: baseline; gap: 6px; margin-top: 24px; }
+.plan-price strong { font-family: var(--serif); font-weight: 400; font-size: clamp(2.4rem, 4vw, 3rem); line-height: 1; letter-spacing: -0.02em; }
+.plan-price span { color: var(--muted); font-size: 0.95rem; white-space: nowrap; }
+.plan-note { margin-top: 8px; font-size: 0.85rem; color: var(--muted); white-space: nowrap; }
+.plan-note b { color: var(--fg); font-weight: 600; }
+.plan-cta { margin-top: 24px; justify-content: center; }
+.btn-appstore-outline { background: transparent; color: var(--fg); box-shadow: inset 0 0 0 1.5px var(--fg); }
+.btn-appstore-outline:hover { background: var(--secondary); }
+.plan-includes { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 0.85rem; font-weight: 600; }
+.plan ul { list-style: none; margin-top: 14px; display: grid; gap: 10px; }
+.plan li { position: relative; padding-left: 26px; font-size: 0.92rem; color: var(--muted); line-height: 1.5; }
+.plan li::before, .yes::before {
+  content: '';
+  position: absolute;
+  left: 5px; top: 0.2em;
+  width: 5px; height: 10px;
+  border: solid var(--fg);
+  border-width: 0 1.75px 1.75px 0;
+  transform: rotate(45deg);
+}
+.pricing-fine { text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 28px; }
+
+/* ─── PRO GLOW ───
+   Mirrors the app's ProGlow: a turning gold rim, a soft halo bleeding past the
+   edge, and a bright glint racing round it. Static gold rim with Reduce Motion. */
+@property --pro-angle { syntax: '<angle>'; initial-value: 0deg; inherits: true; }
+@property --glint-angle { syntax: '<angle>'; initial-value: 0deg; inherits: true; }
+
+.plans { isolation: isolate; }
+.plan.pro {
+  --pro-ring: conic-gradient(from var(--pro-angle),
+    var(--pro),
+    color-mix(in srgb, var(--pro) 25%, transparent),
+    color-mix(in srgb, var(--pro) 85%, transparent),
+    color-mix(in srgb, var(--pro) 15%, transparent),
+    color-mix(in srgb, var(--pro) 60%, transparent),
+    var(--pro));
+  border: 1.5px solid transparent;
+  background: linear-gradient(var(--card), var(--card)) padding-box, var(--pro-ring) border-box;
+  animation: pro-turn 6s linear infinite, pro-glint 3.3s linear infinite;
+}
+.plan.pro::before, .plan.pro::after {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.plan.pro::before {
+  z-index: -1;
+  background: var(--pro-ring);
+  filter: blur(18px);
+  animation: pro-breathe 3.5s ease-in-out infinite;
+}
+.plan.pro::after {
+  padding: 2px;
+  background: conic-gradient(from var(--glint-angle),
+    transparent 0,
+    color-mix(in srgb, var(--pro) 55%, #fff) 5%,
+    transparent 10%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.plan.pro:not(.featured) { animation: none; background: var(--card); border: 1.5px solid var(--pro); }
+.plan.pro:not(.featured)::before, .plan.pro:not(.featured)::after { display: none; }
+@keyframes pro-turn { to { --pro-angle: 360deg; } }
+@keyframes pro-glint { to { --glint-angle: 360deg; } }
+@keyframes pro-breathe { 0%, 100% { opacity: 0.35; } 50% { opacity: 0.6; } }
+@media (prefers-reduced-motion: reduce) {
+  .plan.pro { animation: none; background: var(--card); border: 2px solid var(--pro); }
+  .plan.pro::before, .plan.pro::after { display: none; }
+}
+
+.crown { width: 0.8em; height: 0.8em; color: var(--pro); vertical-align: -0.04em; margin-right: 0.3em; }
+.plan.pro li::before { border-color: var(--pro); }
+.btn-appstore-pro { background: var(--pro); color: var(--pro-fg); }
+.btn-appstore-pro:hover { background: color-mix(in srgb, var(--pro) 85%, var(--fg)); }
+
+/* ─── COMPARISON ─── */
+.compare, .faq { max-width: 860px; margin: 120px auto 0; }
+.compare h2, .faq h2 { font-size: clamp(1.9rem, 4vw, 2.5rem); letter-spacing: -0.01em; margin: 10px 0 32px; }
+.compare h2 { margin-bottom: 10px; }
+.compare-sub { color: var(--muted); margin-bottom: 32px; }
+.compare-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  overflow: hidden;
+}
+.compare table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.compare th, .compare td { padding: 14px 24px; text-align: left; }
+.compare th:not(:first-child), .compare td:not(:first-child) { width: 168px; text-align: center; }
+.compare .pro-cell { background: color-mix(in srgb, var(--pro) 7%, transparent); }
+
+.compare thead th { padding-top: 26px; padding-bottom: 22px; border-bottom: 1px solid var(--border); vertical-align: bottom; }
+.compare-corner { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.plan-name { display: block; font-family: var(--serif); font-size: 1.4rem; font-weight: 400; color: var(--fg); }
+.pro-cell .plan-name { color: var(--pro); }
+.plan-sub { display: block; margin-top: 2px; font-size: 0.78rem; font-weight: 400; color: var(--muted); }
+.compare thead .pro-cell { box-shadow: inset 0 3px 0 var(--pro); }
+
+.compare .group th {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  background: var(--secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--fg);
+}
+.compare thead + tbody .group:first-child th { border-top: 0; }
+.group-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; height: 28px;
+  margin-right: 12px;
+  vertical-align: middle;
+  border-radius: 8px;
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+.group-icon svg { width: 15px; height: 15px; fill: var(--fg); }
+
+.compare tbody tr:not(.group) + tr:not(.group) > * { border-top: 1px solid var(--border); }
+.compare tbody th { font-weight: 400; color: var(--fg); }
+@media (hover: hover) {
+  .compare tbody tr:not(.group):hover > * { background-color: color-mix(in srgb, var(--fg) 3%, transparent); }
+  .compare tbody tr:not(.group):hover > .pro-cell { background-color: color-mix(in srgb, var(--pro) 12%, transparent); }
+}
+
+.yes, .no { position: relative; display: inline-flex; width: 22px; height: 22px; border-radius: 50%; vertical-align: middle; }
+.yes { background: color-mix(in srgb, var(--fg) 8%, transparent); }
+.yes::before {
+  content: '';
+  position: absolute;
+  left: 8px; top: 5px;
+  width: 5px; height: 9px;
+  border: solid var(--fg);
+  border-width: 0 1.75px 1.75px 0;
+  transform: rotate(45deg);
+}
+.pro-cell .yes { background: color-mix(in srgb, var(--pro) 20%, transparent); }
+.pro-cell .yes::before { border-color: var(--pro); border-width: 0 2px 2px 0; }
+.no::before { content: ''; position: absolute; left: 7px; right: 7px; top: 10.5px; height: 1.5px; border-radius: 1px; background: var(--border-2); }
+.val {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+  background: var(--secondary);
+  border-radius: 999px;
+  padding: 3px 11px;
+}
+.pro-cell .val { color: var(--pro-fg); background: var(--pro); font-weight: 600; }
+
+.compare tfoot td, .compare tfoot th { padding-top: 22px; padding-bottom: 24px; border-top: 1px solid var(--border); }
+.table-btn {
+  display: inline-block;
+  padding: 9px 18px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--fg);
+  box-shadow: inset 0 0 0 1.5px var(--fg);
+  transition: background 0.2s;
+}
+.table-btn:hover { background: var(--secondary); }
+.table-btn-pro { background: var(--pro); color: var(--pro-fg); box-shadow: none; }
+.table-btn-pro:hover { background: color-mix(in srgb, var(--pro) 85%, var(--fg)); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ─── FAQ ─── */
+.faq details { border-bottom: 1px solid var(--border); }
+.faq summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+  font-weight: 500;
+  cursor: pointer;
+  list-style: none;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; font-size: 1.4rem; font-weight: 300; color: var(--muted); transition: transform 0.2s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { color: var(--muted); padding-bottom: 20px; max-width: 640px; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .plans { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; gap: 28px; }
+}
+@media (max-width: 768px) {
+  .pricing { padding: 112px 20px 80px; }
+  .pricing-header { margin-bottom: 48px; }
+  .compare, .faq { margin-top: 80px; }
+  .compare th, .compare td { padding-left: 14px; padding-right: 14px; }
+  .compare th:not(:first-child), .compare td:not(:first-child) { width: 68px; padding-left: 4px; padding-right: 4px; }
+  .compare tbody th { font-size: 0.88rem; }
+  .plan-name { font-size: 1.15rem; }
+  .plan-sub { display: none; }
+  .table-btn { padding: 8px 10px; font-size: 0.75rem; }
+}
