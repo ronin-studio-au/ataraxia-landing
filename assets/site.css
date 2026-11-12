@@ -234,6 +234,12 @@ footer {
   .footer-bottom { flex-direction: column-reverse; text-align: center; }
   .footer-links { justify-content: center; flex-wrap: wrap; }
 }
-@media (max-width: 420px) {
-  .nav-links { gap: 10px; }
+@media (max-width: 480px) {
+  nav { padding: 14px 16px; height: 64px; }
+  .nav-logo { font-size: 1.2rem; gap: 8px; }
+  .nav-logo img { width: 28px; height: 28px; }
+  .nav-links { gap: 14px; }
+  .nav-download { width: 36px; height: 36px; padding: 0; justify-content: center; }
+  .nav-download svg { width: 16px; height: 16px; }
+  .nav-download-label { display: none; }
 }
