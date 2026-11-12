@@ -38,8 +38,8 @@
   --pro-fg:    #000000;
   color-scheme: dark;
 }
-/* Logo artwork is black on white; invert it and drop the white box */
-[data-theme="dark"] .nav-logo img { filter: invert(1); mix-blend-mode: screen; }
+/* Logo mark is black ink on transparent; invert it for dark backgrounds */
+[data-theme="dark"] .nav-logo img { filter: invert(1); }
 [data-theme="dark"] footer { border-top: 1px solid var(--d-border); }
 
 :root:not([data-theme="dark"]) .only-dark, [data-theme="dark"] .only-light { display: none; }
@@ -195,7 +195,7 @@ footer {
 }
 .footer-brand { max-width: 320px; }
 .footer-logo { display: flex; align-items: center; gap: 11px; font-family: var(--serif); font-size: 1.5rem; color: var(--d-fg); letter-spacing: 0.02em; margin-bottom: 12px; }
-.footer-logo img { width: 36px; height: 36px; display: block; filter: invert(1); mix-blend-mode: screen; }
+.footer-logo img { width: 36px; height: 36px; display: block; filter: invert(1); }
 .footer-brand p { font-size: 0.88rem; color: var(--d-muted); line-height: 1.65; }
 .footer-cta { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
 .footer-cta .fc-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: #71717A; }
