@@ -3,48 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ataraxia - Journal, Workout, Nutrition & Physique in one iOS app</title>
-  <meta name="description" content="Ataraxia unifies your journal, workouts, nutrition, and physique tracking into one calm daily ritual. Offline-first, ad-free, built for iOS.">
-  <meta name="keywords" content="wellness app, journal app, workout tracker, nutrition tracker, macro tracker, physique tracker, progress photos, iOS, habit, daily ritual, streak">
-  <meta property="og:title" content="Ataraxia - Four trackers. One ritual.">
-  <meta property="og:description" content="Journal, Workout, Nutrition, and Physique - unified into one calm daily practice. Offline-first, ad-free, built for iOS.">
+  <title>Ataraxia - Stoic Journal &amp; Workout Log for iPhone</title>
+  <meta name="description" content="Stoic wisdom meets strength training. Morning and evening Stoic journaling, private on-device AI reflections, and a workout log with RPE, PRs and progression. Offline-first, built for iOS.">
+  <meta name="keywords" content="stoic journal, stoicism, diary, workout log, gym, lifting, strength, RPE, reflection, mindfulness, Marcus Aurelius, Seneca, iOS">
+  <meta property="og:title" content="Ataraxia - Stoic mind. Strong body.">
+  <meta property="og:description" content="Stoic wisdom meets strength training. A Stoic journal and workout log in one iOS app. One app, one practice.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ataraxia - Four trackers. One ritual.">
-  <meta name="twitter:description" content="Journal, Workout, Nutrition, and Physique - unified into one calm daily practice. Built for iOS.">
+  <meta name="twitter:title" content="Ataraxia - Stoic mind. Strong body.">
+  <meta name="twitter:description" content="Stoic wisdom meets strength training. A Stoic journal and workout log in one iOS app.">
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
+  <script src="assets/theme.js"></script>
+  <link rel="stylesheet" href="assets/site.css">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:        #FFFFFF;
-      --fg:        #0A0A0A;
-      --card:      #FFFFFF;
-      --secondary: #F4F4F5;
-      --muted:     #71717A;
-      --border:    #E4E4E7;
-      --border-2:  #D4D4D8;
-      /* Dark (footer) */
-      --d-bg:      #0A0A0A;
-      --d-fg:      #FAFAFA;
-      --d-muted:   #A1A1AA;
-      --d-border:  #262626;
-      --serif:     ui-serif, Georgia, "Times New Roman", serif;
-      --sans:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: var(--sans);
-      font-size: 16px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
+    [data-theme="dark"] #cta .cta-logo { filter: invert(1); mix-blend-mode: screen; }
+    [data-theme="dark"] .phone { box-shadow: 0 0 0 1px var(--border-2); }
 
     /* ─── REVEAL ─── */
     .reveal {
@@ -57,114 +31,6 @@
       .reveal { opacity: 1; transform: none; transition: none; }
       html { scroll-behavior: auto; }
     }
-
-    /* ─── TYPOGRAPHY ─── */
-    h1, h2, h3 { font-family: var(--serif); color: var(--fg); font-weight: 400; }
-    .serif { font-family: var(--serif); }
-
-    /* ─── FOCUS ─── */
-    a:focus-visible, button:focus-visible {
-      outline: 2px solid var(--fg);
-      outline-offset: 2px;
-      border-radius: 4px;
-    }
-
-    /* ─── NAV ─── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 40px;
-      height: 72px;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--serif);
-      font-size: 1.35rem;
-      letter-spacing: 0.02em;
-      color: var(--fg);
-      text-decoration: none;
-    }
-    .nav-logo img { width: 32px; height: 32px; display: block; }
-    .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 500;
-      letter-spacing: 0.01em;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--fg); }
-    .nav-download {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 9px 18px;
-      background: var(--fg);
-      color: #fff !important;
-      border-radius: 10px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .nav-download:hover { background: #262626; transform: translateY(-1px); }
-    .nav-download svg { width: 14px; height: 14px; }
-
-    /* ─── BUTTONS ─── */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 14px 26px;
-      border-radius: 12px;
-      font-family: var(--sans);
-      font-size: 0.9rem;
-      font-weight: 500;
-      letter-spacing: 0.01em;
-      text-decoration: none;
-      border: 1.5px solid transparent;
-      cursor: pointer;
-      transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
-    }
-    .btn:hover { transform: translateY(-1px); }
-    .btn-outline {
-      background: transparent;
-      color: var(--fg);
-      border-color: var(--fg);
-    }
-    .btn-outline:hover { background: var(--fg); color: var(--bg); }
-
-    /* App Store badge (monochrome recreation) */
-    .btn-appstore {
-      display: inline-flex;
-      align-items: center;
-      gap: 11px;
-      padding: 11px 22px;
-      background: var(--fg);
-      color: #fff;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .btn-appstore:hover { background: #262626; transform: translateY(-1px); }
-    .btn-appstore svg { width: 22px; height: 22px; flex-shrink: 0; }
-    .btn-appstore .as-text { display: flex; flex-direction: column; line-height: 1.1; text-align: left; }
-    .btn-appstore .as-small { font-size: 0.6rem; letter-spacing: 0.04em; color: #A1A1AA; }
-    .btn-appstore .as-big { font-family: var(--sans); font-size: 1.05rem; font-weight: 600; }
-    /* Inverted for dark footer */
-    .btn-appstore.invert { background: #fff; color: var(--fg); }
-    .btn-appstore.invert:hover { background: #F4F4F5; }
-    .btn-appstore.invert .as-small { color: var(--muted); }
 
     /* ─── SECTION SHARED ─── */
     section { padding: 104px 40px; }
@@ -200,7 +66,7 @@
       padding-top: 120px;
       padding-bottom: 72px;
       background:
-        radial-gradient(ellipse 70% 55% at 78% 40%, rgba(244, 244, 245, 0.9) 0%, transparent 70%),
+        radial-gradient(ellipse 70% 55% at 78% 40%, var(--glow) 0%, transparent 70%),
         var(--bg);
     }
     .hero-inner {
@@ -253,27 +119,29 @@
 
     /* ─── PHONE FRAME (real screenshot) ─── */
     .phone-wrap { display: flex; justify-content: center; align-items: center; position: relative; }
+    /* Frame proportions scale with --w so the same markup works at any size */
     .phone {
-      width: 300px;
-      aspect-ratio: 1206 / 2622;
+      --w: 300px;
+      width: var(--w);
+      aspect-ratio: 660 / 1434;
       background: #0A0A0A;
-      border-radius: 46px;
-      padding: 11px;
+      border-radius: calc(var(--w) * 0.153);
+      padding: calc(var(--w) * 0.037);
       position: relative;
     }
     .phone::before {
       content: '';
       position: absolute;
-      top: 22px; left: 50%;
+      top: calc(var(--w) * 0.073); left: 50%;
       transform: translateX(-50%);
-      width: 92px; height: 26px;
+      width: calc(var(--w) * 0.307); height: calc(var(--w) * 0.087);
       background: #0A0A0A;
-      border-radius: 14px;
+      border-radius: calc(var(--w) * 0.047);
       z-index: 3;
     }
     .phone-screen {
       width: 100%; height: 100%;
-      border-radius: 36px;
+      border-radius: calc(var(--w) * 0.12);
       overflow: hidden;
       background: #fff;
       display: block;
@@ -335,8 +203,43 @@
       border-radius: 999px;
       padding: 4px 11px;
     }
+    .module-card.soon { background: transparent; border-style: dashed; }
+    .module-card.soon .module-tile, .module-card.soon p, .module-card.soon .m-meta { opacity: 0.55; }
+    .soon-badge {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 8px;
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--fg);
+      border: 1px solid var(--border-2);
+      border-radius: 999px;
+      padding: 3px 10px;
+    }
     @media (hover: hover) {
       .module-card:hover { border-color: var(--border-2); transform: translateY(-3px); }
+    }
+
+    /* Featured modules span the grid with screenshots beside the copy */
+    .module-card.featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: minmax(0, 340px) 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .module-card.featured.reverse { grid-template-columns: 1fr minmax(0, 340px); }
+    .module-card.featured.reverse .module-copy { order: 2; }
+    .screens-row { display: flex; justify-content: center; gap: 20px; }
+    .shot { display: flex; flex-direction: column; align-items: center; gap: 14px; flex-shrink: 0; }
+    .shot figcaption { font-size: 0.82rem; color: var(--muted); }
+    .phone-sm { --w: 190px; }
+    @media (max-width: 1100px) {
+      .module-card.featured, .module-card.featured.reverse { grid-template-columns: 1fr; }
+      .module-card.featured.reverse .module-copy { order: 0; }
     }
 
     /* ─── RITUAL SECTION ─── */
@@ -403,7 +306,7 @@
       background: var(--fg); border-color: var(--fg);
       display: flex; align-items: center; justify-content: center;
     }
-    .ritual-row.done .rr-check svg { width: 12px; height: 12px; stroke: #fff; }
+    .ritual-row.done .rr-check svg { width: 12px; height: 12px; stroke: var(--bg); }
     .streak-pill {
       display: inline-flex; align-items: center; gap: 7px;
       background: var(--secondary);
@@ -462,54 +365,6 @@
     #cta .section-title { max-width: 640px; margin-left: auto; margin-right: auto; }
     #cta .cta-row { display: flex; justify-content: center; gap: 14px; margin-top: 30px; flex-wrap: wrap; }
 
-    /* ─── FOOTER ─── */
-    footer {
-      background: var(--d-bg);
-      color: var(--d-muted);
-      padding: 64px 40px 40px;
-    }
-    .footer-inner { max-width: 1120px; margin: 0 auto; }
-    .footer-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 48px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid var(--d-border);
-      flex-wrap: wrap;
-    }
-    .footer-brand { max-width: 320px; }
-    .footer-logo { display: flex; align-items: center; gap: 11px; font-family: var(--serif); font-size: 1.5rem; color: var(--d-fg); letter-spacing: 0.02em; margin-bottom: 12px; }
-    .footer-logo img { width: 36px; height: 36px; display: block; filter: invert(1); mix-blend-mode: screen; }
-    .footer-brand p { font-size: 0.88rem; color: var(--d-muted); line-height: 1.65; }
-    .footer-cta { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
-    .footer-cta .fc-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: #71717A; }
-    .footer-bottom {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-top: 28px;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-    .footer-links { display: flex; gap: 26px; list-style: none; }
-    .footer-links a { font-size: 0.82rem; color: var(--d-muted); text-decoration: none; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--d-fg); }
-    .footer-credit-row { text-align: center; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--d-border); }
-    .footer-credit {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      font-size: 0.8rem;
-      color: #71717A;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-credit img { height: 20px; width: auto; display: block; transition: transform 0.2s; }
-    .footer-credit strong { color: var(--d-fg); font-weight: 600; }
-    .footer-credit:hover { color: var(--d-muted); }
-    .footer-credit:hover img { transform: scale(1.08); }
-
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 48px; }
@@ -521,25 +376,31 @@
       .ritual-inner .ritual-copy { text-align: center; }
       .ritual-inner .ritual-copy .section-sub { margin-left: auto; margin-right: auto; }
       .ritual-inner .streak-pill { margin-left: auto; margin-right: auto; }
+      .screens-row {
+        justify-content: flex-start;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 20px;
+        margin: 0 -32px;
+        padding: 0 32px 8px;
+      }
+      .shot { scroll-snap-align: center; }
+      /* Centres the row when it fits without clipping it when it scrolls */
+      .shot:first-child { margin-left: auto; }
+      .shot:last-child { margin-right: auto; }
     }
     @media (max-width: 768px) {
-      nav { padding: 14px 20px; }
-      .nav-links li:not(.nav-cta-item) { display: none; }
       section { padding: 72px 20px; }
       #problem { padding: 64px 20px; }
       .modules-grid { grid-template-columns: 1fr; }
       .why-grid { grid-template-columns: 1fr; }
       .section-head { margin-bottom: 40px; text-align: center; }
       .section-head .section-sub { margin-left: auto; margin-right: auto; }
-      footer { padding: 48px 20px 32px; }
-      .footer-top { flex-direction: column; }
-      .footer-bottom { flex-direction: column-reverse; text-align: center; }
-      .footer-links { justify-content: center; flex-wrap: wrap; }
     }
     @media (max-width: 420px) {
       .hero-cta { flex-direction: column; align-items: center; width: 100%; }
       .hero-cta .btn, .hero-cta .btn-appstore { width: 100%; justify-content: center; max-width: 300px; }
-      .phone { width: 260px; }
+      .phone:not(.phone-sm) { --w: 260px; }
     }
   </style>
 </head>
@@ -552,6 +413,10 @@
       <li><a href="#modules">Modules</a></li>
       <li><a href="#ritual">Daily Ritual</a></li>
       <li><a href="#why">Why Ataraxia</a></li>
+      <li class="nav-pricing-item"><a href="pricing.html">Pricing</a></li>
+      <li class="nav-theme-item">
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode"><svg class="only-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="only-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button>
+      </li>
       <li class="nav-cta-item">
         <a class="nav-download" href="#cta">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -567,8 +432,8 @@
       <div class="hero-inner">
         <div>
           <span class="hero-eyebrow"><span class="dot"></span>Built for iOS &middot; Offline-first</span>
-          <h1 class="hero-title reveal">Four trackers.<br><span class="line-2">One ritual.</span></h1>
-          <p class="hero-sub reveal">Ataraxia unifies your journal, workouts, nutrition, and physique into a single calm daily practice. No ads. No clutter. Just the discipline of showing up.</p>
+          <h1 class="hero-title reveal">Stoic mind.<br><span class="line-2">Strong body.</span></h1>
+          <p class="hero-sub reveal">Ataraxia brings together the two daily disciplines the ancients knew belonged together: training the mind and training the body. Reflect each morning and evening, then train with the same focus. One app, one practice.</p>
           <div class="hero-cta reveal">
             <a href="#cta" class="btn-appstore">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -578,14 +443,14 @@
           </div>
           <p class="hero-note reveal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Your data stays on your device. Nothing sold, nothing tracked.
+            No feeds, no followers, no noise. Just you and the work.
           </p>
         </div>
 
         <div class="phone-wrap reveal">
           <div class="phone">
             <div class="phone-screen">
-              <img src="assets/screenshots/dashboard.png" alt="Ataraxia dashboard showing daily rituals, a completion ring, and a streak counter" loading="eager" width="1206" height="2622">
+              <img class="only-light" src="assets/screenshots/dashboard-light.webp" alt="Ataraxia dashboard showing daily rituals, a completion ring, and a streak counter" loading="eager" width="660" height="1434"><img class="only-dark" src="assets/screenshots/dashboard-dark.webp" alt="Ataraxia dashboard showing daily rituals, a completion ring, and a streak counter" loading="eager" width="660" height="1434">
             </div>
           </div>
         </div>
@@ -596,7 +461,7 @@
   <!-- PROBLEM / REFRAME -->
   <section id="problem" class="alt-bg">
     <div class="problem-inner reveal">
-      <p><span class="muted">A workout app. A food tracker. A journal. A folder of progress photos.</span> Ataraxia is the one app that replaces all four, and ties them into a single daily ritual.</p>
+      <p><span class="muted">A journal for the mind. A gym log for the body.</span> The Stoics never separated the two. Ataraxia trains both, in one daily practice.</p>
     </div>
   </section>
 
@@ -604,46 +469,80 @@
   <section id="modules">
     <div class="container">
       <div class="section-head reveal">
-        <p class="section-label">Four modules</p>
-        <h2 class="section-title">Everything you track, in one place.</h2>
-        <p class="section-sub">Each module works on its own. Together, they replace the handful of apps you are already juggling, in one calm, consistent design.</p>
+        <p class="section-label">The practice</p>
+        <h2 class="section-title">Train the mind. Train the body.</h2>
+        <p class="section-sub">A Stoic journal and a serious workout log, in one calm, consistent design. More disciplines are on the way.</p>
       </div>
       <div class="modules-grid">
 
         <!-- Journal -->
-        <div class="module-card reveal">
-          <div class="module-tile">
-            <svg viewBox="0 0 24 24"><path d="M11.2 5.9C9.85 4.62 7.75 3.9 5.7 3.9c-1.05 0-2.05.14-3 .43-.42.13-.7.52-.7.96v11.9c0 .64.62 1.1 1.25.92.77-.22 1.6-.34 2.45-.34 1.9 0 3.68.55 5 1.5.4.29.7-.02.7-.5V5.9zM12.8 5.9C14.15 4.62 16.25 3.9 18.3 3.9c1.05 0 2.05.14 3 .43.42.13.7.52.7.96v11.9c0 .64-.62 1.1-1.25.92-.77-.22-1.6-.34-2.45-.34-1.9 0-3.68.55-5 1.5-.4.29-.7-.02-.7-.5V5.9z"/></svg>
+        <div class="module-card featured reveal">
+          <div class="module-copy">
+            <div class="module-tile">
+              <svg viewBox="0 0 24 24"><path d="M11.2 5.9C9.85 4.62 7.75 3.9 5.7 3.9c-1.05 0-2.05.14-3 .43-.42.13-.7.52-.7.96v11.9c0 .64.62 1.1 1.25.92.77-.22 1.6-.34 2.45-.34 1.9 0 3.68.55 5 1.5.4.29.7-.02.7-.5V5.9zM12.8 5.9C14.15 4.62 16.25 3.9 18.3 3.9c1.05 0 2.05.14 3 .43.42.13.7.52.7.96v11.9c0 .64-.62 1.1-1.25.92-.77-.22-1.6-.34-2.45-.34-1.9 0-3.68.55-5 1.5-.4.29-.7-.02-.7-.5V5.9z"/></svg>
+            </div>
+            <h3>Journal</h3>
+            <p>Begin each day with a Morning Ritual and close it, as Seneca did, with an honest Evening Review. Interpret a new passage of Stoic philosophy with Exegesis, write freestyle or scan a handwritten page, and get weekly and monthly AI reflections generated privately on your iPhone.</p>
+            <div class="m-meta">
+              <span class="m-chip">Morning ritual</span>
+              <span class="m-chip">Evening review</span>
+              <span class="m-chip">Exegesis</span>
+              <span class="m-chip">Private AI reflections</span>
+            </div>
           </div>
-          <h3>Journal</h3>
-          <p>Set an intention each morning, unwind with an evening review, and sit with a daily Stoic reflection when you want perspective. Freestyle entries and a history calendar keep the thread going.</p>
-          <div class="m-meta">
-            <span class="m-chip">Morning ritual</span>
-            <span class="m-chip">Evening review</span>
-            <span class="m-chip">Daily reflection</span>
+          <div class="screens-row">
+            <figure class="shot">
+              <div class="phone phone-sm"><div class="phone-screen"><img class="only-light" src="assets/screenshots/morning-light.webp" alt="Morning journal with a mood check-in and a guided Stoic template" loading="lazy" width="660" height="1434"><img class="only-dark" src="assets/screenshots/morning-dark.webp" alt="Morning journal with a mood check-in and a guided Stoic template" loading="lazy" width="660" height="1434"></div></div>
+              <figcaption>Morning ritual</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="phone phone-sm"><div class="phone-screen"><img class="only-light" src="assets/screenshots/evening-light.webp" alt="Evening review summarising what went well and what fell short" loading="lazy" width="660" height="1434"><img class="only-dark" src="assets/screenshots/evening-dark.webp" alt="Evening review summarising what went well and what fell short" loading="lazy" width="660" height="1434"></div></div>
+              <figcaption>Evening review</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="phone phone-sm"><div class="phone-screen"><img class="only-light" src="assets/screenshots/exegesis-light.webp" alt="Exegesis screen interpreting a Marcus Aurelius passage" loading="lazy" width="660" height="1434"><img class="only-dark" src="assets/screenshots/exegesis-dark.webp" alt="Exegesis screen interpreting a Marcus Aurelius passage" loading="lazy" width="660" height="1434"></div></div>
+              <figcaption>Exegesis</figcaption>
+            </figure>
           </div>
         </div>
 
         <!-- Workout -->
-        <div class="module-card reveal">
-          <div class="module-tile">
-            <svg viewBox="0 0 24 24"><path d="M20.6 8.7h-1V7.3a1.15 1.15 0 0 0-1.15-1.15h-1.1A1.15 1.15 0 0 0 16.2 7.3v3.05H7.8V7.3a1.15 1.15 0 0 0-1.15-1.15h-1.1A1.15 1.15 0 0 0 4.4 7.3v1.4h-1a1.15 1.15 0 0 0-1.15 1.15v4.3A1.15 1.15 0 0 0 3.4 15.3h1v1.4a1.15 1.15 0 0 0 1.15 1.15h1.1A1.15 1.15 0 0 0 7.8 16.7v-3.05h8.4v3.05a1.15 1.15 0 0 0 1.15 1.15h1.1a1.15 1.15 0 0 0 1.15-1.15v-1.4h1a1.15 1.15 0 0 0 1.15-1.15v-4.3A1.15 1.15 0 0 0 20.6 8.7z"/></svg>
+        <div class="module-card featured reverse reveal">
+          <div class="module-copy">
+            <div class="module-tile">
+              <svg viewBox="0 0 24 24"><path d="M20.6 8.7h-1V7.3a1.15 1.15 0 0 0-1.15-1.15h-1.1A1.15 1.15 0 0 0 16.2 7.3v3.05H7.8V7.3a1.15 1.15 0 0 0-1.15-1.15h-1.1A1.15 1.15 0 0 0 4.4 7.3v1.4h-1a1.15 1.15 0 0 0-1.15 1.15v4.3A1.15 1.15 0 0 0 3.4 15.3h1v1.4a1.15 1.15 0 0 0 1.15 1.15h1.1A1.15 1.15 0 0 0 7.8 16.7v-3.05h8.4v3.05a1.15 1.15 0 0 0 1.15 1.15h1.1a1.15 1.15 0 0 0 1.15-1.15v-1.4h1a1.15 1.15 0 0 0 1.15-1.15v-4.3A1.15 1.15 0 0 0 20.6 8.7z"/></svg>
+            </div>
+            <h3>Workout</h3>
+            <p>Log sets, reps and weight quickly, with sets prefilled from your last session. Rate effort with RPE, follow every lift's estimated one-rep max, celebrate new PRs, and see where your work went with weekly volume and a muscle map.</p>
+            <div class="m-meta">
+              <span class="m-chip">Sets, reps &amp; RPE</span>
+              <span class="m-chip">Personal records</span>
+              <span class="m-chip">Strength Index</span>
+              <span class="m-chip">Muscle map</span>
+            </div>
           </div>
-          <h3>Workout</h3>
-          <p>Log every set, rep, and rest period, save reusable templates, and track personal records. Progression charts turn each session into a strength curve you can watch climb.</p>
-          <div class="m-meta">
-            <span class="m-chip">Sets, reps &amp; RPE</span>
-            <span class="m-chip">Personal records</span>
-            <span class="m-chip">Progression charts</span>
+          <div class="screens-row">
+            <figure class="shot">
+              <div class="phone phone-sm"><div class="phone-screen"><img class="only-light" src="assets/screenshots/workout-session-light.webp" alt="Active workout session listing exercises with sets completed" loading="lazy" width="660" height="1434"><img class="only-dark" src="assets/screenshots/workout-session-dark.webp" alt="Active workout session listing exercises with sets completed" loading="lazy" width="660" height="1434"></div></div>
+              <figcaption>Live session</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="phone phone-sm"><div class="phone-screen"><img class="only-light" src="assets/screenshots/lift-progress-light.webp" alt="Barbell back squat progress with personal records and strength standards" loading="lazy" width="660" height="1434"><img class="only-dark" src="assets/screenshots/lift-progress-dark.webp" alt="Barbell back squat progress with personal records and strength standards" loading="lazy" width="660" height="1434"></div></div>
+              <figcaption>Lift progress</figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="phone phone-sm"><div class="phone-screen"><img class="only-light" src="assets/screenshots/workout-progress-light.webp" alt="Workout progress with consistency heatmap, Strength Index and muscle map" loading="lazy" width="660" height="1434"><img class="only-dark" src="assets/screenshots/workout-progress-dark.webp" alt="Workout progress with consistency heatmap, Strength Index and muscle map" loading="lazy" width="660" height="1434"></div></div>
+              <figcaption>Progress overview</figcaption>
+            </figure>
           </div>
         </div>
 
         <!-- Nutrition -->
-        <div class="module-card reveal">
+        <div class="module-card soon reveal">
           <div class="module-tile">
             <svg viewBox="0 0 24 24"><rect x="5.9" y="2" width="1.15" height="6" rx="0.55"/><rect x="8.15" y="2" width="1.15" height="6" rx="0.55"/><rect x="10.4" y="2" width="1.15" height="6" rx="0.55"/><path d="M5.3 7h6.9v.7a3.35 3.35 0 0 1-2.25 3.16V21a1.2 1.2 0 0 1-2.4 0V10.86A3.35 3.35 0 0 1 5.3 7.7z"/><path d="M17.5 2c-1.8 0-3.25 2.4-3.25 5.35 0 2.6 1.12 4.76 2.6 5.24V21a1.2 1.2 0 0 0 2.4 0V2.02C18.66 2.01 18.08 2 17.5 2z"/></svg>
           </div>
-          <h3>Nutrition</h3>
+          <h3>Nutrition <span class="soon-badge">Coming soon</span></h3>
           <p>Log meals against your macro and calorie goals in seconds, from a food library that remembers what you eat. Macro-split templates and history charts keep you honest.</p>
           <div class="m-meta">
             <span class="m-chip">Macros &amp; calories</span>
@@ -653,11 +552,11 @@
         </div>
 
         <!-- Physique -->
-        <div class="module-card reveal">
+        <div class="module-card soon reveal">
           <div class="module-tile">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="3.6" r="2.1"/><path d="M12 6.6c-.75 0-1.4.48-1.62 1.2L9.2 11.3 4.5 12.75a1.05 1.05 0 0 0 .62 2l4.05-1.25-.72 2.35-2.4 5.05a1.1 1.1 0 0 0 1.98.94L10.9 16.6l1.1-2.6 1.1 2.6 2.87 5.24a1.1 1.1 0 0 0 1.98-.94l-2.4-5.05-.72-2.35 4.05 1.25a1.05 1.05 0 0 0 .62-2L14.8 11.3l-1.18-3.5A1.72 1.72 0 0 0 12 6.6z"/></svg>
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="3.4" r="2.3"/><path d="M9.7 7h4.6a1.6 1.6 0 0 1 1.6 1.6V14H8.1V8.6A1.6 1.6 0 0 1 9.7 7z"/><g fill="none" stroke="var(--fg)" stroke-width="2.2" stroke-linecap="round"><path d="M8.9 8 6.2 13.8"/><path d="M15.1 8l2.7 5.8"/><path d="M10.3 13.5v8"/><path d="M13.7 13.5v8"/></g></svg>
           </div>
-          <h3>Physique</h3>
+          <h3>Physique <span class="soon-badge">Coming soon</span></h3>
           <p>Capture check-ins, follow your weight trend, and watch your before-and-after story unfold with a side-by-side compare slider and a full progress-photo timeline.</p>
           <div class="m-meta">
             <span class="m-chip">Progress photos</span>
@@ -676,8 +575,8 @@
       <div class="ritual-inner">
         <div class="ritual-copy reveal">
           <p class="section-label">Daily ritual</p>
-          <h2 class="section-title">Four practices. One streak.</h2>
-          <p class="section-sub">Ataraxia ties the modules together on a single home screen. Complete the day's rituals, keep your streak alive, and let quiet consistency do the work that motivation cannot.</p>
+          <h2 class="section-title">Mind and body. One streak.</h2>
+          <p class="section-sub">Your journal and your training meet on a single home screen. Complete the day's rituals, set a weekly goal of training days, and build streaks you'll want to protect.</p>
           <div class="streak-pill">
 
             🔥 0 days <span class="muted">&middot; start today</span>
@@ -731,7 +630,7 @@
       <div class="section-head reveal">
         <p class="section-label">Why Ataraxia</p>
         <h2 class="section-title">Calm by design.</h2>
-        <p class="section-sub">Built as a native iOS app for people who want to track their life without an app tracking them back.</p>
+        <p class="section-sub">No feeds, no followers, no noise. A native iOS app built for the quiet work of self-mastery.</p>
       </div>
       <div class="why-grid">
         <div class="why-card reveal">
@@ -739,7 +638,7 @@
             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6 8 12v10c0 9 6.8 15 16 18 9.2-3 16-9 16-18V12L24 6z"/></svg>
           </div>
           <h4>Offline-first &amp; private</h4>
-          <p>Every entry lives locally on your device and syncs quietly in the background. No ads, no tracking, nothing sold.</p>
+          <p>Everything works without a connection and saves to your device instantly. Background sync keeps your entries and workouts backed up, so your practice is never lost.</p>
         </div>
         <div class="why-card reveal">
           <div class="why-icon">
@@ -752,8 +651,8 @@
           <div class="why-icon">
             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="9"/><circle cx="24" cy="24" r="2.5" fill="currentColor"/></svg>
           </div>
-          <h4>One focused system</h4>
-          <p>Four modules that share one language and one home screen, so tracking your whole self never means switching context.</p>
+          <h4>Private AI reflections</h4>
+          <p>Weekly and monthly reflections are generated entirely on your iPhone. Your journal never leaves your device.</p>
         </div>
         <div class="why-card reveal">
           <div class="why-icon">
@@ -769,11 +668,11 @@
   <!-- REFLECTION / STOIC THREAD -->
   <section id="reflect" class="alt-bg">
     <div class="reflect-inner reveal">
-      <p class="section-label">A daily pause</p>
+      <p class="section-label">Why Ataraxia?</p>
       <div class="reflect-mark">&ldquo;</div>
-      <p class="reflect-quote">You have power over your mind, not outside events. Realize this, and you will find strength.</p>
+      <p class="reflect-quote">Waste no more time arguing about what a good man should be. Be one.</p>
       <p class="reflect-attr">Marcus Aurelius</p>
-      <p class="reflect-note">Ataraxia is the ancient word for tranquility. Each day opens with a quote from Marcus Aurelius, Seneca, or Epictetus. Reflect on it, or simply carry it with you.</p>
+      <p class="reflect-note">Ataraxia is the Greek word for a state of calm, untroubled clarity: the tranquillity that comes from mastering yourself rather than your circumstances. The Stoics trained for it daily, in mind and in body. Now you can too.</p>
     </div>
   </section>
 
@@ -782,8 +681,8 @@
     <div class="container reveal">
       <img class="cta-logo" src="assets/logo.png" alt="Ataraxia">
       <p class="section-label" style="text-align:center;">Start today</p>
-      <h2 class="section-title">Begin your daily ritual.</h2>
-      <p class="section-sub" style="margin: 0 auto; text-align:center;">Journal, train, eat, and track your progress, all in one calm iOS app. Download Ataraxia and complete your first ritual tonight.</p>
+      <h2 class="section-title">Build the discipline that builds you.</h2>
+      <p class="section-sub" style="margin: 0 auto; text-align:center;">Start your morning ritual. Log your first session. Download Ataraxia for iPhone.</p>
       <div class="cta-row">
         <a href="#" class="btn-appstore">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -799,7 +698,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <div class="footer-logo"><img src="assets/logo.png" alt="">Ataraxia</div>
-          <p>One calm daily ritual for the whole self. Journal, workout, nutrition, and physique, unified in a single iOS app.</p>
+          <p>Stoic wisdom meets strength training. A Stoic journal and workout log in one iOS app.</p>
         </div>
         <div class="footer-cta">
           <span class="fc-label">Available on iPhone</span>
@@ -811,9 +710,9 @@
       </div>
       <div class="footer-bottom">
         <ul class="footer-links">
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="mailto:hello@roninstudio.com.au">Contact</a></li>
         </ul>
       </div>
       <div class="footer-credit-row">
